@@ -1,5 +1,8 @@
 package examples.generics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pair<T> {
     private T first;
     private T second;
@@ -30,13 +33,13 @@ public class Pair<T> {
         second = newValue;
     }
 
-    public static <T extends Comparable> T min(T[] a) {
-        if(a == null || a.length == 0) {
+    public static <T extends Comparable<T>> T min(T[] a) {
+        if (a == null || a.length == 0) {
             return null;
         }
         T smallest = a[0];
         for (int i = 1; i < a.length; i++) {
-            if(smallest.compareTo(a[i]) > 0) {
+            if (smallest.compareTo(a[i]) > 0) {
                 smallest = a[i];
             }
         }
@@ -44,10 +47,6 @@ public class Pair<T> {
     }
 
     public static void main(String[] args) {
-        String[] words = {"Mary", "had", "a", "little", "lamb"};
-        Pair<String> mm = ArrayAlg.minmax(words);
-        System.out.println("min = " + mm.getFirst());
-        System.out.println("max = " + mm.getSecond());
     }
 }
 
@@ -66,6 +65,7 @@ class ArrayAlg {
                 max = a[i];
             }
         }
+        List<Integer> lst = new ArrayList<>();
         return new Pair<>(min, max);
     }
 }
