@@ -1,20 +1,21 @@
 package exam.lists;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Parentheses {
     public static boolean valid(char[] data) {
         List<Character> brackets = new LinkedList<>();
+        int index = 0;
         boolean hasOpenBracket = false;
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == '(') {
-                brackets.add(data[i]);
+        for (char datum : data) {
+            if (datum == '(') {
+                brackets.add(datum);
+                index++;
                 hasOpenBracket = true;
             } else {
                 if (hasOpenBracket) {
-                    brackets.remove(i - 1);
+                    brackets.remove(--index);
                 } else {
                     return false;
                 }
