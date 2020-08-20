@@ -15,7 +15,12 @@ public class HighArrayApp {
         arr.insert(66);
         arr.insert(33);
         arr.display();
-        System.out.println(arr.removeMax());
-        arr.display();
+        HighArray sorted = new HighArray(maxSize);
+        long max = arr.removeMax();
+        while(max != -1) {
+            sorted.insert(max);
+            max = arr.removeMax();
+        }
+        sorted.display();
     }
 }
