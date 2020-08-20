@@ -41,6 +41,17 @@ public class HighArray {
         return false;
     }
 
+    public long getMax() {
+        if(nElems == 0) return -1;
+        long max = a[0];
+        for (int i = 1; i < nElems; i++) {
+            if(max < a[i]) {
+                max = a[i];
+            }
+        }
+        return max;
+    }
+
     public void display() {
         for (int j = 0; j < nElems; j++) {
             System.out.print(a[j] + " ");

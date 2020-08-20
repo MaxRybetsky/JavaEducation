@@ -25,5 +25,6 @@ public class HighArrayApp {
         arr.delete(55);
         arr.delete(99);
         arr.display();
+        System.out.println(arr.getMax());
     }
 }
