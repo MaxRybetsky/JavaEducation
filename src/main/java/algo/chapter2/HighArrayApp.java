@@ -15,16 +15,7 @@ public class HighArrayApp {
         arr.insert(66);
         arr.insert(33);
         arr.display();
-        int searchKey = 35;
-        if (arr.find(searchKey)) {
-            System.out.println("Found " + searchKey);
-        } else {
-            System.out.println("Can't find " + searchKey);
-        }
-        arr.delete(0);
-        arr.delete(55);
-        arr.delete(99);
+        System.out.println(arr.removeMax());
         arr.display();
-        System.out.println(arr.getMax());
     }
 }

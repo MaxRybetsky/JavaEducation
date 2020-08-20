@@ -52,6 +52,12 @@ public class HighArray {
         return max;
     }
 
+    public long removeMax() {
+        long max = getMax();
+        delete(max);
+        return max;
+    }
+
     public void display() {
         for (int j = 0; j < nElems; j++) {
             System.out.print(a[j] + " ");
