@@ -43,12 +43,7 @@ public class OrderedArray {
     }
 
     public boolean delete(long value) {
-        int j;
-        for (j = 0; j < nElems; j++) {
-            if (a[j] == value) {
-                break;
-            }
-        }
+        int j = find(value);
         if (j != nElems) {
             for (int k = j; k < nElems - 1; k++) {
                 a[k] = a[k + 1];
