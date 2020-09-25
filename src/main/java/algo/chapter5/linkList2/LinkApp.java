@@ -7,7 +7,6 @@ public class LinkApp {
         ll.insertFirst(44, 4.99);
         ll.insertFirst(66, 6.99);
         ll.insertFirst(88, 8.99);
-        ll.insertFirst(8100, 8.99);
         ll.displayList();
         Link f = ll.find(44);
         if(f != null) {
