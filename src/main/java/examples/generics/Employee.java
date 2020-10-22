@@ -4,14 +4,14 @@ import java.time.LocalDate;
 
 public class Employee {
     private String name;
-    private int salary;
+    private double salary;
     private LocalDate dataOfEmp;
 
     public Employee(String name) {
         this(name, 5000, 12, 12, 2012);
     }
 
-    public Employee(String name, int salary, int day, int month, int year) {
+    public Employee(String name, double salary, int day, int month, int year) {
         this.name = name;
         this.salary = salary;
         this.dataOfEmp = LocalDate.of(year, month, day);
@@ -21,7 +21,7 @@ public class Employee {
         return name;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
