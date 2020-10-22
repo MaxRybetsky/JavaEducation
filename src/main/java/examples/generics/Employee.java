@@ -3,12 +3,19 @@ package examples.generics;
 import java.time.LocalDate;
 
 public class Employee {
+    public static final int NAME_SIZE = 40;
+    public static final int RECORD_SIZE = 100;
+
     private String name;
     private double salary;
     private LocalDate dataOfEmp;
 
+    public Employee() {
+        this("No name");
+    }
+
     public Employee(String name) {
-        this(name, 5000, 12, 12, 2012);
+        this(name, 0, 1, 1, 2000);
     }
 
     public Employee(String name, double salary, int day, int month, int year) {
