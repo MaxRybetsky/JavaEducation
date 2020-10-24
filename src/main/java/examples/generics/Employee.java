@@ -1,8 +1,9 @@
 package examples.generics;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Employee {
+public class Employee implements Serializable {
     public static final int NAME_SIZE = 40;
     public static final int RECORD_SIZE = 100;
 
@@ -34,6 +35,10 @@ public class Employee {
 
     public LocalDate getDataOfEmp() {
         return dataOfEmp;
+    }
+
+    public void raiseSalary(int percent) {
+        salary += salary * percent / 100;
     }
 
     @Override

@@ -125,3 +125,6 @@
 /target/classes/algo/chapter6/TriangleApp.class
 /target/classes/examples/types/Type.class
 /target/classes/exam/emails/User.class
+/target/classes/examples/io/DataIO.class
+/target/classes/examples/io/ObjectStreamTest.class
+/target/classes/examples/io/RandomAccessTest.class
