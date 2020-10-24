@@ -2,7 +2,7 @@ package examples.generics;
 
 import java.io.Serializable;
 
-public class Manager extends Employee implements Serializable {
+public class Manager extends Employee {
     private int bonus;
     private Employee secretary;
 
