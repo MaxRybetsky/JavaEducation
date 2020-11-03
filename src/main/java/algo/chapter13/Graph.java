@@ -29,11 +29,11 @@ public class Graph {
     }
 
     public void displayVertex(int v) {
-        System.out.print(vertexList[v].label);
+        System.out.print(vertexList[v].getLabel());
     }
 
     public void dfs() {
-        vertexList[0].wasVisited = true;
+        vertexList[0].visitVertex(true);
         displayVertex(0);
         stack.push(0);
         while (!stack.isEmpty()) {
@@ -41,7 +41,7 @@ public class Graph {
             if (v == -1) {
                 stack.pop();
             } else {
-                vertexList[v].wasVisited = true;
+                vertexList[v].visitVertex(true);
                 displayVertex(v);
                 stack.push(v);
             }
@@ -51,7 +51,7 @@ public class Graph {
 
     public int getAdjUnvisitedVertex(int v) {
         for (int i = 0; i < nVerts; i++) {
-            if (adjMat[v][i] == 1 && !vertexList[i].wasVisited) {
+            if (adjMat[v][i] == 1 && !vertexList[i].wasVisited()) {
                 return i;
             }
         }
@@ -59,14 +59,14 @@ public class Graph {
     }
 
     public void bfs() {
-        vertexList[0].wasVisited = true;
+        vertexList[0].visitVertex(true);
         displayVertex(0);
         queue.insert(0);
         int v2;
-        while(!queue.isEmpty()){
-            int v1 = (int)queue.remove();
-            while((v2 = getAdjUnvisitedVertex(v1)) != -1){
-                vertexList[v2].wasVisited = true;
+        while (!queue.isEmpty()) {
+            int v1 = (int) queue.remove();
+            while ((v2 = getAdjUnvisitedVertex(v1)) != -1) {
+                vertexList[v2].visitVertex(true);
                 displayVertex(v2);
                 queue.insert(v2);
             }
@@ -74,9 +74,28 @@ public class Graph {
         reset();
     }
 
+    public void mst() {
+        vertexList[0].visitVertex(true);
+        stack.push(0);
+        while (!stack.isEmpty()) {
+            int curV = (int) stack.peek();
+            int v = getAdjUnvisitedVertex(curV);
+            if(v == -1) {
+                stack.pop();
+            } else {
+                vertexList[v].visitVertex(true);
+                stack.push(v);
+                displayVertex(curV);
+                displayVertex(v);
+                System.out.print(" ");
+            }
+        }
+        reset();
+    }
+
     private void reset() {
         for (int i = 0; i < nVerts; i++) {
-            vertexList[i].wasVisited = false;
+            vertexList[i].visitVertex(false);
         }
     }
 }
