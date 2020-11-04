@@ -10,6 +10,7 @@ public class ExperimentsWithStreams {
         map.put("1", List.of("A", "B", "C"));
         map.put("2", List.of("D", "E", "F"));
         map.put("3", List.of("M", "A", "E"));
+
     }
 }
 
