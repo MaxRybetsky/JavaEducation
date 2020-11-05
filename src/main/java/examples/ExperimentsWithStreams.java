@@ -1,5 +1,6 @@
 package examples;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,9 +9,18 @@ public class ExperimentsWithStreams {
     public static void main(String[] args) {
         Map<String, List<String>> map = new HashMap<>();
         map.put("1", List.of("A", "B", "C"));
-        map.put("2", List.of("D", "E", "F"));
+        List<String> m = new ArrayList<>();
+        m.add("D");
+        m.add("E");
+        m.add("F");
+        map.put("2", m);
         map.put("3", List.of("M", "A", "E"));
-
+        map.get("2").add("sdf");
+        map.put(null, List.of("a"));
+        System.out.println(map);
+        List<List<String>> lst = new ArrayList<>();
+        System.out.println(lst.get(0));
+        System.out.println(lst);
     }
 }
 

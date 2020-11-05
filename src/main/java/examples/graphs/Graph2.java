@@ -1,4 +1,6 @@
-package algo.chapter13;
+package examples.graphs;
+
+import algo.chapter13.Vertex;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
