@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>memoryTool</module>
+    <module>webservlets</module>
   </modules>
 
   <name>JavaEducation</name>
