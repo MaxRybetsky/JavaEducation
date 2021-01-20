@@ -1,10 +1,10 @@
-package com.max;
+package webapp;
 
 import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
 
-@Named
 @SessionScoped
+@Named
 public class ExampleBean {
     private String login;
     private String password;
@@ -36,5 +36,7 @@ public class ExampleBean {
 
     public void doLogin() {
         logged = true;
+        System.out.println(login);
+        System.out.println(password);
     }
 }
