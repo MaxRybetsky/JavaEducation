@@ -1,11 +1,12 @@
 package webapp;
 
-import javax.faces.bean.SessionScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import java.io.Serializable;
 
-@SessionScoped
 @Named
-public class ExampleBean {
+@SessionScoped
+public class ExampleBean implements Serializable {
     private String login;
     private String password;
     private boolean logged = false;
