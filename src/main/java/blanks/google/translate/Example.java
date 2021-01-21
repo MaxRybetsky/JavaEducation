@@ -10,9 +10,9 @@ import java.net.URLEncoder;
 public class Example {
 
     public static void main(String[] args) throws IOException {
-        String text = "Hello world!";
+        String text = "Hallo Welt";
         //Translated text: Hallo Welt!
-        System.out.println("Translated text: " + translate("en", "de", text));
+        System.out.println("Translated text: " + translate("", "ru", text));
     }
 
     private static String translate(String langFrom, String langTo, String text) throws IOException {
