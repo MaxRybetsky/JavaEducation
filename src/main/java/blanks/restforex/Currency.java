@@ -17,6 +17,8 @@ public class Currency {
     private LocalDate date;
     private Map<CurrencyCode, Double> rates = new HashMap<>();
 
+    private Map<String, String> error = new HashMap<>();
+
     public boolean isSuccess() {
         return success;
     }
@@ -47,6 +49,14 @@ public class Currency {
 
     public void setRates(Map<CurrencyCode, Double> rates) {
         this.rates = rates;
+    }
+
+    public Map<String, String> getError() {
+        return error;
+    }
+
+    public void setError(Map<String, String> error) {
+        this.error = error;
     }
 
     @Override
