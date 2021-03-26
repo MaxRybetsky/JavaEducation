@@ -58,6 +58,9 @@ class Elem {
     private Long id;
     private String name;
 
+    public Elem() {
+    }
+
     public Elem(Long id, String name) {
         this.id = id;
         this.name = name;
