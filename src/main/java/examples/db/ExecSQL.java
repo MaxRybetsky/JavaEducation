@@ -57,7 +57,7 @@ public class ExecSQL {
     public static Connection getConnection() throws IOException, SQLException {
         Properties props = new Properties();
         try (InputStream in = Files.newInputStream(
-                Paths.get("data/database.properties"))) {
+                Paths.get("src/main/resources/data/database.properties"))) {
             props.load(in);
         }
         String drivers = props.getProperty("jdbc.drivers");
@@ -73,7 +73,7 @@ public class ExecSQL {
     public static void showResultSet(ResultSet result) throws SQLException {
         ResultSetMetaData metaData = result.getMetaData();
         int columnCount = metaData.getColumnCount();
-        for (int i = 1; i < columnCount; i++) {
+        for (int i = 1; i <= columnCount; i++) {
             if (i > 1) {
                 System.out.print(", ");
             }
@@ -81,7 +81,7 @@ public class ExecSQL {
         }
         System.out.println();
         while (result.next()) {
-            for (int i = 1; i < columnCount; i++) {
+            for (int i = 1; i <= columnCount; i++) {
                 if (i > 1) {
                     System.out.print(", ");
                 }
